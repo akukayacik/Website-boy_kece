@@ -1,132 +1,180 @@
-
-<!DOCTYPE html>
-<html lang="id">
+<!DOCTYPE html><html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio Ada Apa Bro</title>
-
+  <title>Portofolio BOY_KECE</title>
   <style>
     body {
-      font-family: sans-serif;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
       background: url('pngtree-black-plaid-background-picture-image_1444476.jpg') no-repeat center center fixed;
       background-size: cover;
       color: white;
-      display: flex;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .container {
-      width: 350px;
-      background-color: rgba(26, 26, 26, 0.9);
-      border-radius: 20px;
-      padding: 20px;
       text-align: center;
     }
-
-    .profile-pic {
-      width: 100px;
-      height: 100px;
+    .container {
+      padding: 30px;
+    }
+    .profile {
       border-radius: 50%;
-      overflow: hidden;
-      margin: 0 auto 20px;
-      border: 3px solid gold;
-    }
-
-    .profile-pic img {
-      width: 100%;
-      height: 100%;
+      width: 150px;
+      height: 150px;
       object-fit: cover;
+      border: 4px solid #00f0ff;
+      box-shadow: 0 0 20px #00f0ff;
+      transition: transform 0.3s;
     }
-
-    .card {
-      background: #2c2c2c;
-      padding: 20px;
-      border-radius: 20px;
+    .profile:hover {
+      transform: scale(1.05);
     }
-
-    .section {
-      margin-bottom: 20px;
-    }
-
-    button {
-      background-color: white;
-      color: black;
-      padding: 10px;
-      width: 100%;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
+    .neon-name {
+      font-size: 24px;
       font-weight: bold;
-    }
-
-    button:hover {
-      background-color: #ccc;
-    }
-
-    .hidden {
-      display: none;
       margin-top: 10px;
-      color: #ddd;
+      text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff;
+      animation: glow 1.5s infinite alternate;
     }
-
-    .socials {
-      background: white;
-      color: black;
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #00f0ff; }
+      to { text-shadow: 0 0 20px #00f0ff; }
+    }
+    .section {
+      background-color: rgba(0, 0, 0, 0.6);
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 500px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px #00f0ff;
+      animation: slideIn 1s ease forwards;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .social-buttons {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .social-buttons a {
+      background-color: #111;
+      color: white;
       padding: 10px;
-      border-radius: 15px;
-      margin-top: 20px;
-      font-weight: bold;
-    }
-
-    .socials a {
-      color: black;
+      border-radius: 50%;
       text-decoration: none;
+      box-shadow: 0 0 10px #00f0ff;
+      transition: 0.3s;
     }
-
-    .socials a:hover {
-      text-decoration: underline;
+    .social-buttons a:hover {
+      transform: scale(1.2);
+    }
+    .emoji {
+      font-size: 30px;
+      animation: bounce 1s infinite alternate;
+    }
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+    .faq {
+      text-align: left;
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+    }
+    .faq h3 {
+      cursor: pointer;
+    }
+    .faq .answer {
+      display: none;
+      padding: 10px 0;
     }
   </style>
 </head>
-<body>
+<body onload="playMusic()">
+  <audio id="bgmusic" src="7027136442521709931-c.mp3" loop></audio>
+  <audio id="clicksound" src="click.mp3"></audio>
+
+  <div class="social-buttons">
+    <a href="#" onclick="toggleMusic()">🎵</a>
+    <!-- <a href="#">📷</a> -->
+  </div>
 
   <div class="container">
-    <!-- Foto profil -->
-    <div class="profile-pic">
-      <img src="IMG_20250726_132240.jpg" alt="Foto Profil">
+    <img src="IMG_20250726_132240.jpg" alt="PP" class="profile" />
+    <div class="neon-name">BOY_KECE😜</div>
+    <div class="emoji">😺</div>
+
+    <div class="section" onclick="klikTombol()">
+      <h2>Tentang Diriku ⬇️</h2>
+      <p>aku adalah konten kreator, semoga kalian terhibur</p>
     </div>
 
-    <div class="card">
-      <div class="section">
-        <button onclick="toggleText('text1')">Tentang Diriku ⬇️</button>
-        <p id="text1" class="hidden">Aku adalah konten kreator, semoga kalian terhibur 🙌</p>
-      </div>
+    <div class="section" onclick="klikTombol()">
+      <h2>Karya Saya 🎨</h2>
+      <p>belum ada 😁🙏</p>
+    </div>
 
-      <div class="section">
-        <button onclick="toggleText('text2')">Karya Saya ⬇️</button>
-        <p id="text2" class="hidden">Belum ada 😁🙏</p>
-      </div>
+    <div class="section" onclick="klikTombol()">
+      <h2>Teks Bebas 💬</h2>
+      <p>aku orang sigma ya guys 🤭</p>
+    </div>
 
-      <div class="section">
-        <button onclick="toggleText('text3')">Teks Bebas ⬇️</button>
-        <p id="text3" class="hidden">Aku orang sigma ya guys 🤭</p>
+    <div class="section" onclick="klikTombol()">
+      <div id="kontenFavorit">
+        <h3>Konten Favoritku</h3>
+        <ul>
+          <li><a href="https://vt.tiktok.com/ZSHpSJHUC6eYQ-576rJ/" target="_blank">Video TikTok Favorit 1</a></li>
+          <li><a href="https://www.tiktok.com/@ada_apabro/video/7531171031935945990" target="_blank">Video TikTok Favorit 2 hidup jokowi</a></li>
+        </ul>
       </div>
+    </div>
 
-      <div class="socials">
-        TikTok saya: <a href="https://tiktok.com/@ada_apabro" target="_blank">@ada_apabro</a><br />
-        <!-- YouTube dihapus sesuai permintaan -->
-      </div>
+    <div class="faq">
+      <h2>Q&A</h2>
+      <h3 onclick="toggleJawaban(this)">Q: Kamu buat konten apa aja?</h3>
+      <div class="answer">A: Random konten, yang penting menghibur 😁</div>
+      <h3 onclick="toggleJawaban(this)">Q: Kapan upload video baru?</h3>
+      <div class="answer">A: Kalo semangatnya full charge! 🔋</div>
     </div>
   </div>
 
   <script>
-    function toggleText(id) {
-      const element = document.getElementById(id);
-      element.classList.toggle("hidden");
+    function playMusic() {
+      const music = document.getElementById('bgmusic');
+      music.play().catch(function(e) {
+        console.log("Autoplay ditolak, user harus klik dulu:", e);
+      });
+    }
+
+    let isPlaying = true;
+    function toggleMusic() {
+      const music = document.getElementById('bgmusic');
+      if (isPlaying) {
+        music.pause();
+      } else {
+        music.play();
+      }
+      isPlaying = !isPlaying;
+    }
+
+    function klikTombol() {
+      const klik = document.getElementById('clicksound');
+      klik.currentTime = 0;
+      klik.play();
+    }
+
+    function toggleJawaban(element) {
+      const answer = element.nextElementSibling;
+      if (answer.style.display === 'block') {
+        answer.style.display = 'none';
+      } else {
+        answer.style.display = 'block';
+      }
     }
   </script>
-
 </body>
 </html>
