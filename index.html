@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Ada Apa Bro</title>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      background: url('pngtree-black-plaid-background-picture-image_1444476.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 350px;
+      background-color: rgba(26, 26, 26, 0.9);
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 20px;
+      border: 3px solid gold;
+    }
+
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card {
+      background: #2c2c2c;
+      padding: 20px;
+      border-radius: 20px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: white;
+      color: black;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #ccc;
+    }
+
+    .hidden {
+      display: none;
+      margin-top: 10px;
+      color: #ddd;
+    }
+
+    .socials {
+      background: white;
+      color: black;
+      padding: 10px;
+      border-radius: 15px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .socials a {
+      color: black;
+      text-decoration: none;
+    }
+
+    .socials a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Foto profil -->
+    <div class="profile-pic">
+      <img src="IMG_20250726_132240.jpg" alt="Foto Profil">
+    </div>
+
+    <div class="card">
+      <div class="section">
+        <button onclick="toggleText('text1')">Tentang Diriku ⬇️</button>
+        <p id="text1" class="hidden">Aku adalah konten kreator, semoga kalian terhibur 🙌</p>
+      </div>
+
+      <div class="section">
+        <button onclick="toggleText('text2')">Karya Saya ⬇️</button>
+        <p id="text2" class="hidden">Belum ada 😁🙏</p>
+      </div>
+
+      <div class="section">
+        <button onclick="toggleText('text3')">Teks Bebas ⬇️</button>
+        <p id="text3" class="hidden">Aku orang sigma ya guys 🤭</p>
+      </div>
+
+      <div class="socials">
+        TikTok saya: <a href="https://tiktok.com/@ada_apabro" target="_blank">@ada_apabro</a><br />
+        <!-- YouTube dihapus sesuai permintaan -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleText(id) {
+      const element = document.getElementById(id);
+      element.classList.toggle("hidden");
+    }
+  </script>
+
+</body>
+</html>
